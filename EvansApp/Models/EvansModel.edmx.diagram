@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b588bba526af429c962e5013aab6127e" Name="Diagram1">
+        <EntityTypeShape EntityType="EvansDBModel.AMS360_Customer" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_Cards" Width="1.5" PointX="3" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_CD_IRA" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_Customer" Width="1.5" PointX="0.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_DD_SV" Width="1.5" PointX="3" PointY="118.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_LN" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_ML" Width="1.5" PointX="3" PointY="93" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.HZ_SafeDepBox" Width="1.5" PointX="3" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.WM_AdvisorsAssistant" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.WM_LPL" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.WM_PersonalLines" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EvansDBModel.MD_LinkedCustomers" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_Cards_HZ_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_CD_IRA_HZ_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_DD_SV_HZ_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_LN_HZ_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_ML_HZ_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="EvansDBModel.FK_HZ_SafeDepBox_HZ_Customer" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

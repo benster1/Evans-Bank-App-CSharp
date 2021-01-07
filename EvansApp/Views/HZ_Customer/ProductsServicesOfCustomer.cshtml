@@ -1,0 +1,119 @@
+﻿
+@model EvansApp.Models.HZ_Customer
+
+@{
+    ViewBag.Title = "Products and Services";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h4><i><b>@Model.FirstName @Model.LastName</b></i> has the following products ans services with Evans Bank:<br /></h4>
+        <div>
+
+            <p>
+                <table class="table table-hover" border="1">
+                     @{
+                         if (ViewBag.LN != null)
+                         {
+                    <div>
+                    <tr>
+                        <td>HZ Cards - Debit/Credit Cards</td>
+                        <td>
+                                                 <ul>
+                                                     @foreach (var item in ViewBag.Cards)
+                                                     {<li>
+                                                         @item.CardNumber
+                                                         </li>
+                                                     }
+                                                 </ul>
+                        </td>
+                    </tr>
+                     </div>
+                             } 
+                      }
+
+                    <tr>
+                        <td>HZ CD IRA - Certificate of deposit (CD) and an individual retirement account (IRA)</td>
+                        <td>
+                            <ul>
+    @foreach (var item in ViewBag.IRA)
+    {
+                                <li>
+                                    @item.Product
+                                </li>
+        
+    }</ul>
+</td>
+                    </tr>
+                    <tr>
+                        <td>DD_SV - Demand Draft</td>
+                        <td>
+                            <ul>
+                            @foreach (var item in ViewBag.SV)
+                            {<li>
+    @item.AccountNumber
+</li>
+                            }
+                                </ul>
+                        </td>
+                    </tr>
+                    @{
+                        if (ViewBag.LN != null) { 
+                         
+                                <tr>
+                                    <td>LN</td>
+                                    <td>
+                                                            <ul>
+                                                                @foreach (var item in ViewBag.LN)
+                                                                {<li>
+    @item.AccountNumber
+</li>
+                                                                }
+                                                            </ul>
+</td>
+                                </tr>
+                                
+                            }
+                    }
+
+
+
+
+
+                    <td>ML</td>
+                    <td>
+                        <ul>
+                            @foreach (var item in ViewBag.ML)
+                            {<li>
+    @item.Product
+</li>
+                            }
+                        </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Safety Deposit Box</td>
+                        <td>
+                            <ul>
+                                @foreach (var item in ViewBag.depositBox)
+                                {
+                                <li>
+                                    @item.AccountNumber
+                                </li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+        
+            <a href="javascript:history.back()">Previous</a>
+
+        
+    </div>
+    </div>
+
+
+
+
+

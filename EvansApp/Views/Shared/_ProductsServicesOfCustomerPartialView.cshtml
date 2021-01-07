@@ -1,0 +1,73 @@
+﻿
+@model EvansApp.Models.HZ_Customer
+
+@{
+    ViewBag.Title = "Products and Services";
+}
+
+<h3><i></i>@Model.FirstName @Model.LastName</i> has the following products ans services with Evans Bank:</h3>
+
+<div>
+
+
+    <table border="1">
+        <tr>
+            <td>Card</td>
+            <td>
+                @foreach (var item in ViewBag.Cards)
+                {
+                    @item.CardNumber
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>IRA</td>
+            <td>
+                @foreach (var item in ViewBag.IRA)
+                {
+                    @item.Product
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>SV</td>
+            <td>
+                @foreach (var item in ViewBag.SV)
+                {
+                    @item.ShortName
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>LN</td>
+            <td>
+                @foreach (var item in ViewBag.LN)
+                {
+                    @item.Product
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>ML</td>
+            <td>
+                @foreach (var item in ViewBag.ML)
+                {
+                    @item.Product
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Safety Deposit Box</td>
+            <td>
+                @foreach (var item in ViewBag.depositBox)
+                {
+                    @item.AccountNumber
+                }
+            </td>
+        </tr>
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Search")
+</p>
