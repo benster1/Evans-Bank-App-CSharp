@@ -10,7 +10,7 @@
 <div>
 
 
-    <table border="1">
+    <table id="myTable" border="1">
         <tr>
             <td>Card</td>
             <td>
@@ -71,3 +71,13 @@
 <p>
     @Html.ActionLink("Back to List", "Search")
 </p>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}

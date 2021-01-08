@@ -6,86 +6,102 @@
 }
 <div class="row">
     <div class="col-md-12">
-        <h4><i><b>@Model.FirstName @Model.LastName</b></i> has the following products ans services with Evans Bank:<br /></h4>
-        <div>
+        <p>
+            <h4><i><b>@Model.FirstName @Model.LastName</b></i> has the following products and services with Evans Bank:<br /></h4>
+        </p>
+        <p>
+            <div>
 
-            <p>
-                <table class="table table-hover" border="1">
-                     @{
-                         if (ViewBag.LN != null)
-                         {
-                    <div>
+        <p>
+            <div>
+                <table id="myTable" class="table table-hover" border="1" style="width: 90%; table-layout: fixed;">
+                    <thead>
+                        <tr>
+                            <th>Evans Product/Service</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @{
+                        if (ViewBag.LN != null)
+                        {
+                            <div>
+                                <tr>
+                                    <td>Debit/Credit Cards</td>
+                                    <td>
+                                        <ul>
+                                            @foreach (var item in ViewBag.Cards)
+                                            {
+                                                <li>
+                                                    @item.CardNumber
+                                                </li>
+                                            }
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </div>
+                        }
+                    }
+
                     <tr>
-                        <td>HZ Cards - Debit/Credit Cards</td>
+                        <td>IRA - Certificate of deposit (CD) and an individual retirement account (IRA)</td>
                         <td>
-                                                 <ul>
-                                                     @foreach (var item in ViewBag.Cards)
-                                                     {<li>
-                                                         @item.CardNumber
-                                                         </li>
-                                                     }
-                                                 </ul>
+                            <ul>
+                                @foreach (var item in ViewBag.IRA)
+                                {
+                                    <li>
+                                        @item.Product
+                                    </li>
+
+                                }
+                            </ul>
                         </td>
                     </tr>
-                     </div>
-                             } 
-                      }
-
                     <tr>
-                        <td>HZ CD IRA - Certificate of deposit (CD) and an individual retirement account (IRA)</td>
+                        <td>SV - Demand Draft</td>
                         <td>
                             <ul>
-    @foreach (var item in ViewBag.IRA)
-    {
-                                <li>
-                                    @item.Product
-                                </li>
-        
-    }</ul>
-</td>
-                    </tr>
-                    <tr>
-                        <td>DD_SV - Demand Draft</td>
-                        <td>
-                            <ul>
-                            @foreach (var item in ViewBag.SV)
-                            {<li>
-    @item.AccountNumber
-</li>
-                            }
-                                </ul>
+                                @foreach (var item in ViewBag.SV)
+                                {
+                                    <li>
+                                        @item.AccountNumber
+                                    </li>
+                                }
+                            </ul>
                         </td>
                     </tr>
                     @{
-                        if (ViewBag.LN != null) { 
-                         
-                                <tr>
-                                    <td>LN</td>
-                                    <td>
-                                                            <ul>
-                                                                @foreach (var item in ViewBag.LN)
-                                                                {<li>
-    @item.AccountNumber
-</li>
-                                                                }
-                                                            </ul>
-</td>
-                                </tr>
-                                
-                            }
+                        if (ViewBag.LN != null)
+                        {
+
+                            <tr>
+                                <td>LN</td>
+                                <td>
+                                    <ul>
+                                        @foreach (var item in ViewBag.LN)
+                                        {
+                                            <li>
+                                                @item.AccountNumber
+                                            </li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
+
+                        }
                     }
 
 
 
 
-
+                    <tr>
                     <td>ML</td>
                     <td>
                         <ul>
                             @foreach (var item in ViewBag.ML)
-                            {<li>
-    @item.Product
-</li>
+                            {
+                                <li>
+                                    @item.Product
+                                </li>
                             }
                         </ul>
                     </td>
@@ -96,24 +112,33 @@
                             <ul>
                                 @foreach (var item in ViewBag.depositBox)
                                 {
-                                <li>
-                                    @item.AccountNumber
-                                </li>
+                                    <li>
+                                        @item.AccountNumber
+                                    </li>
                                 }
                             </ul>
                         </td>
                     </tr>
                 </table>
-            </p>
-        </div>
-        
-            <a href="javascript:history.back()">Previous</a>
-
-        
+            </div>
+            <a href="javascript:history.back()">Previous page</a>
+        </p>
     </div>
-    </div>
+    </p>
 
 
 
 
 
+</div>
+</div>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
